@@ -1,0 +1,35 @@
+logging:
+  level:
+    #org.springframework: DEBUG
+    org.springframework.data.couchbase.repository.query: DEBUG
+    
+server:
+  port: 9090
+  servlet:
+    context-path: /data
+  ssl:
+    enabled: true
+    key-store: classpath:localhost.p12
+    key-store-password: 12345
+    key-store-type: pkcs12
+    key-password: 12345
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    
+spring:
+  application:
+    name: data-srv
+  devtools:
+    restart:
+      enabled: true
+  couchbase:
+    connection-string: 127.0.0.1
+    username: Administrator
+    password: password
+    
+  data:
+    couchbase:
+      bucket-name: Test_Data
+      auto-index: true
